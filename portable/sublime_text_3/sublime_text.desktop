@@ -1,0 +1,22 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Sublime Text
+GenericName=Text Editor
+Comment=Sophisticated text editor for code, markup and prose
+Exec=REPLACE_WITH_HOME/sync/portable/sublime_text_3/sublime_text %F
+Terminal=false
+MimeType=text/plain;
+Icon=REPLACE_WITH_ICON
+Categories=TextEditor;Development;
+StartupNotify=true
+Actions=Window;Document;
+
+[Desktop Action Window]
+Name=New Window
+Exec=REPLACE_WITH_HOME/sync/portable/sublime_text_3/sublime_text -n
+
+[Desktop Action Document]
+Name=New File
+Exec=REPLACE_WITH_HOME/sync/portable/sublime_text_3/sublime_text --command new_file

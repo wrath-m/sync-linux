@@ -1,0 +1,16 @@
+FROM <<REPLACE_WITH_DOCKER_IMAGE_FROM>>
+
+COPY install.bash /root
+COPY start.func.bash /root
+COPY start.source.bash /root
+
+RUN bash /root/install.bash
+RUN bash /root/start.func.bash
+RUN rm /root/install.bash
+RUN rm /root/start.func.bash
+RUN rm /root/start.source.bash
+
+ADD src /usr/src
+COPY files /
+
+CMD bash /root/start.bash && sleep infinity

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=gnome-terminal -e 'bash -c "bash $HOME/syncCore/commands/runSyncSourceProcess.bash"'
+Hidden=false
+NoDisplay=false
+Name=SyncCore
+Comment=
