@@ -63,6 +63,9 @@ fi
 
 if !(command -v docker > /dev/null 2>&1); then
     sudo $packageManager install -y docker.io
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    sudo systemctl restart docker
 fi
 
 if !(command -v docker-machine > /dev/null 2>&1); then
