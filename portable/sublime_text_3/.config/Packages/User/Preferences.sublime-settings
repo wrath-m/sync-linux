@@ -1,5 +1,5 @@
 {
-	"binary_file_patterns": [
+	"file_exclude_patterns": [
 		"README.md"
 	],
 	"folder_exclude_patterns":
