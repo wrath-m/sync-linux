@@ -22,6 +22,10 @@ if [[ ! -f $HOME/.local/share/applications/sublime_text.desktop ]]; then
     sed -i "s#REPLACE_WITH_HOME#$HOME#g" $HOME/.local/share/applications/sublime_text.desktop
     sed -i "s#REPLACE_WITH_ICON#$HOME/sync/portable/sublime_text_3/Icon/256x256/sublime-text.png#g" $HOME/.local/share/applications/sublime_text.desktop
 fi
+if [[ ! -f $HOME/.local/share/applications/postman.desktop ]]; then
+    cp $HOME/syncCore/portable/postman/postman.desktop $HOME/.local/share/applications/postman.desktop
+    sed -i "s#REPLACE_WITH_HOME#$HOME#g" $HOME/.local/share/applications/postman.desktop
+fi
 
 # bash config
 if [[ ! -f $HOME/.bashrc ]]; then

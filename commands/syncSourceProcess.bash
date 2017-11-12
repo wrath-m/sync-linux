@@ -13,6 +13,7 @@ declare -A files
 
 files['$HOME/.config/sublime-text-3/Packages|$HOME/syncCore/portable/sublime_text_3/.config/Packages']='*'
 files['$HOME/.config/sublime-text-3/Installed Packages|$HOME/syncCore/portable/sublime_text_3/.config/Installed Packages']='*'
+files['$HOME/sync/portable/postman|$HOME/syncCore/portable/postman']='*'
 files['$HOME/sync/files|$HOME/syncCore/files']='*'
 excludeFiles=('$HOME/.config/sublime-text-3/Packages/User/Package Control.last-run' '$HOME/.config/sublime-text-3/Packages/User/Package Control.ca-list' '$HOME/.config/sublime-text-3/Packages/User/Package Control.ca-bundle' '$HOME/.config/sublime-text-3/Packages/User/Package Control.system-ca-bundle')
 excludeFolders=('$HOME/.config/sublime-text-3/Packages/User/Package Control.cache/' '$HOME/.config/sublime-text-3/Packages/User/Package Control.ca-certs/')
