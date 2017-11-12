@@ -1,0 +1,7 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=Postman
+Exec=REPLACE_WITH_HOME/sync/portable/postman/./Postman
+Terminal=false
+MimeType=text/plain;
