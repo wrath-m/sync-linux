@@ -60,7 +60,6 @@ if !(command -v docker > /dev/null 2>&1); then
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
     sudo $packageManager update
     sudo $packageManager install -y docker-ce
-    sudo groupadd docker
     sudo usermod -aG docker $USER
     sudo systemctl restart docker
 fi
