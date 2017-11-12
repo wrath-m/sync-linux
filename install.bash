@@ -70,7 +70,8 @@ mkdir $HOME/syncCore
 
 cp "$sshKeyPath" "/tmp/syncCoreIdRsa"
 chmod 700 "/tmp/syncCoreIdRsa"
-ssh-add "/tmp/syncCoreIdRsa" && git clone "$gitUrl" $HOME/syncCore/.
+ssh-add "/tmp/syncCoreIdRsa"
+git clone "$gitUrl" $HOME/syncCore/.
 mv "/tmp/syncCoreIdRsa" "$HOME/syncCore/id_rsa"
 
 # install programs
