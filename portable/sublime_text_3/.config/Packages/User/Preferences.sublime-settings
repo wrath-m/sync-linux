@@ -1,6 +1,6 @@
 {
 	"binary_file_patterns": [
-		"readme.md"
+		"README.md"
 	],
 	"folder_exclude_patterns":
 	[
