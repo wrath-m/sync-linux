@@ -16,59 +16,39 @@ if [[ ! -f $sshKeyPath ]]; then
     exit 1
 fi
 
-# install programs
-
+# install linux packages
 if (command -v apt >/dev/null 2>&1); then
     packageManager='apt'
 else
     packageManager='apt-get'
 fi
-
 if !(command -v git >/dev/null 2>&1); then
     sudo $packageManager install -y git
 fi
-
 if !(command -v gnome-terminal >/dev/null 2>&1); then
     sudo $packageManager install -y gnome-terminal
 fi
-
 if !(command -v inotifywait >/dev/null 2>&1); then
     sudo $packageManager install -y inotify-tools
 fi
-
 if !(command -v guake >/dev/null 2>&1); then
     sudo $packageManager install -y guake
     guake > /dev/null 2>&1 & disown
 fi
-
 if !(command -v add-apt-repository > /dev/null 2>&1); then
     sudo $packageManager install -y software-properties-common
 fi
-
 if !(command -v curl > /dev/null 2>&1); then
     sudo $packageManager install -y curl
 fi
-
 if !(command -v wget > /dev/null 2>&1); then
     sudo $packageManager install -y wget
 fi
-
 if !(command -v nano > /dev/null 2>&1); then
     sudo $packageManager install -y nano
 fi
-
 if !(command -v vim > /dev/null 2>&1); then
     sudo $packageManager install -y vim
-fi
-
-if !(command -v google-chrome-stable); then
-    sudo dpkg -i chrome.deb
-    sudo apt install -f
-fi
-
-if !(command -v virtualbox); then
-    sudo dpkg -i virtualbox.deb
-    sudo apt install -f
 fi
 
 if !(command -v docker > /dev/null 2>&1); then
@@ -92,6 +72,16 @@ cp "$sshKeyPath" "/tmp/syncCoreIdRsa"
 chmod 700 "/tmp/syncCoreIdRsa"
 ssh-add "/tmp/syncCoreIdRsa" && git clone "$gitUrl" $HOME/syncCore/.
 mv "/tmp/syncCoreIdRsa" "$HOME/syncCore/id_rsa"
+
+# install programs
+if !(command -v google-chrome-stable); then
+    sudo dpkg -i chrome.deb
+    sudo apt install -f
+fi
+if !(command -v virtualbox); then
+    sudo dpkg -i virtualbox.deb
+    sudo apt install -f
+fi
 
 pkill -f "runSyncSourceProcess.bash"
 gnome-terminal -e 'bash -c "bash $HOME/syncCore/commands/runSyncSourceProcess.bash"'
