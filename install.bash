@@ -56,7 +56,6 @@ if !(command -v docker > /dev/null 2>&1); then
     sudo $packageManager install ca-certificates
     sudo $packageManager install curl
     sudo $packageManager install gnupg2
-    sudo $packageManager install python-software-properties
     curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
     sudo $packageManager update
