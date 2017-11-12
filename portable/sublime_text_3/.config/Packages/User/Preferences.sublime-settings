@@ -1,4 +1,7 @@
 {
+	"binary_file_patterns": [
+		"readme.md"
+	],
 	"folder_exclude_patterns":
 	[
 		".svn",
