@@ -52,7 +52,15 @@ if !(command -v vim > /dev/null 2>&1); then
 fi
 
 if !(command -v docker > /dev/null 2>&1); then
-    sudo $packageManager install -y docker.io
+    sudo $packageManager install apt-transport-https
+    sudo $packageManager install ca-certificates
+    sudo $packageManager install curl
+    sudo $packageManager install gnupg2
+    sudo $packageManager install python-software-properties
+    curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable"
+    sudo $packageManager update
+    sudo $packageManager install -y docker-ce
     sudo groupadd docker
     sudo usermod -aG docker $USER
     sudo systemctl restart docker
