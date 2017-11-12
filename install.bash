@@ -61,6 +61,16 @@ if !(command -v vim > /dev/null 2>&1); then
     sudo $packageManager install -y vim
 fi
 
+if !(command -v google-chrome-stable); then
+    sudo dpkg -i chrome.deb
+    sudo apt install -f
+fi
+
+if !(command -v virtualbox); then
+    sudo dpkg -i virtualbox.deb
+    sudo apt install -f
+fi
+
 if !(command -v docker > /dev/null 2>&1); then
     sudo $packageManager install -y docker.io
     sudo groupadd docker
@@ -72,21 +82,6 @@ if !(command -v docker-machine > /dev/null 2>&1); then
     curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
     chmod +x /tmp/docker-machine &&
     sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
-fi
-
-if !(command -v google-chrome-stable); then
-    sudo dpkg -i chrome.deb
-    sudo apt install -f
-fi
-
-if !(command -v google-chrome-stable); then
-    sudo dpkg -i chrome.deb
-    sudo apt install -f
-fi
-
-if !(command -v virtualbox); then
-    sudo dpkg -i virtualbox.deb
-    sudo apt install -f
 fi
 
 rm -rf $HOME/sync
