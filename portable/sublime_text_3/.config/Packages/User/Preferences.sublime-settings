@@ -5,11 +5,13 @@
 	],
 	"folder_exclude_patterns":
 	[
-		".svn",
 		".git",
 		".hg",
+		".svn",
+		"build",
 		"CVS",
-		"node_modules"
+		"node_modules",
+		"public"
 	],
 	"font_size": 13,
 	"ignored_packages":
