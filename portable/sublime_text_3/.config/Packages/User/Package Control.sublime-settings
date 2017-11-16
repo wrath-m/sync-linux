@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Go To Definition",
 		"JSX",
 		"Nodejs",
 		"Package Control",
