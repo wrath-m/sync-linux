@@ -19,7 +19,7 @@
 	],
 	"line_padding_bottom": 5,
 	"line_padding_top": 5,
-	"tab_size": 4,
+	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": true
