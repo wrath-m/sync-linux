@@ -10,8 +10,7 @@
 		".svn",
 		"build",
 		"CVS",
-		"node_modules",
-		"public"
+		"node_modules"
 	],
 	"font_size": 13,
 	"ignored_packages":
